@@ -65,6 +65,7 @@ if Code.ensure_loaded?(ExLibSRTP) do
         key: event.remote_keying_material,
         rtp: crypto_profile,
         rtcp: crypto_profile
+        window_size: 4096,
       }
 
       :ok = ExLibSRTP.add_stream(state.srtp, policy)
