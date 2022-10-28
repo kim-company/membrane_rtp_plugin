@@ -80,7 +80,8 @@ if Code.ensure_loaded?(ExLibSRTP) do
         ssrc: :any_outbound,
         key: event.local_keying_material,
         rtp: crypto_profile,
-        rtcp: crypto_profile
+        rtcp: crypto_profile,
+        window_size: 128 * 5
       }
 
       :ok = ExLibSRTP.add_stream(state.srtp, policy)
