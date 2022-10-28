@@ -19,7 +19,7 @@ defmodule Membrane.RTP.JitterBuffer do
 
   def_input_pad :input, accepted_format: RTP, demand_mode: :auto
 
-  @default_latency 1_000 |> Time.milliseconds()
+  @default_latency 2_000 |> Time.milliseconds()
 
   def_options clock_rate: [spec: RTP.clock_rate_t()],
               latency: [
