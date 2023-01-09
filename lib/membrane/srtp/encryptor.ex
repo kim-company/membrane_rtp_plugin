@@ -8,6 +8,7 @@ if Code.ensure_loaded?(ExLibSRTP) do
     use Membrane.Filter
 
     alias Membrane.{Buffer, RTP, SRTP}
+    require Membrane.Logger
 
     defguardp is_protection_error_fatal(type, reason)
               when type == :rtcp or
